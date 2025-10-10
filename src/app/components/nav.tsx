@@ -1,14 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-// import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const leftLinks = [
     { name: 'Home', href: '/' },
@@ -22,9 +23,30 @@ export default function Navbar() {
     { name: 'Contact', href: '/contact' },
   ];
 
+  // === Hide navbar on scroll down, show on scroll up ===
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // scrolling down
+        setVisible(false);
+      } else {
+        // scrolling up
+        setVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <nav className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[1298px] max-w-[95%] bg-[#1A004A] h-[86px] rounded-[50px] border border-white/20 shadow-lg px-8 md:px-12 flex items-center justify-between">
-      
+    <nav
+      className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[1298px] max-w-[95%] bg-[#1A004A] h-[86px] rounded-[50px] border border-white/20 shadow-lg px-8 md:px-12 flex items-center justify-between transition-transform duration-500 ${
+        visible ? 'translate-y-0' : '-translate-y-[120%]'
+      }`}
+    >
       {/* === LEFT LINKS === */}
       <div className="hidden md:flex items-center space-x-8">
         {leftLinks.map((link) => (
