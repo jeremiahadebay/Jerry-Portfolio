@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -11,7 +11,7 @@ export default function HeroSection() {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
         className="max-w-xl"
-      >
+      >;
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
           Hi, I’m <span className="text-purple-800">Jeremiah</span><br />
           <span className="text-gray-800">UI/UX Designer</span>
@@ -49,4 +49,4 @@ export default function HeroSection() {
       </motion.div>
     </section>
   )
-}
+};
