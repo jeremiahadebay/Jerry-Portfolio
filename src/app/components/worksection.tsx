@@ -63,9 +63,9 @@ export default function WorkExperience() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.6 }}
-        className="text-3xl md:text-4xl font-semibold text-gray-800 mb-16"
+        className="text-3xl md:text-4xl font-meduim tracking-[-0.015em] text-[#1D0055] mb-16"
       >
-        My Work <span className="text-purple-700 font-bold">Experience</span>
+        My Work <span className="text-[#1D0055] font-extrabold">Experience</span>
       </motion.h2>
 
       {/* Timeline */}
