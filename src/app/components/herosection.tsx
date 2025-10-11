@@ -49,15 +49,15 @@ export default function HeroSection() {
           className="flex justify-center items-center relative z-10"
         >
           {/* Background Circle */}
-          <div className="absolute w-[330px] h-[636px] md:w-[420px] md:h-[420px] bg-[#1A004A] rounded-full"></div>
+          <div className="relative w-[330px] h-[636px] md:w-[420px] md:h-[420px] bg-[#1A004A] rounded-full"></div>
 
           {/* Portrait */}
-          <div className="w-64 h-64 md:w-80 md:h-80 z-10 -mt-10 md:-mt-16 shadow-xl relative">
+          <div className="md:w-80 md:h-80 z-10 md:-mt-16 shadow-xl absolute">
             <Image
               src="/jerryherosection.png"
               alt="Jeremiah portrait"
-              width={350}
-              height={350}
+              width={700}
+              height={700}
               className="object-cover rounded-full"
             />
           </div>
