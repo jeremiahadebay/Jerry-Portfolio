@@ -22,7 +22,7 @@ export default function ServicesSection() {
       <div className="pointer-events-none absolute inset-0 bg-[url('/backgroundtwo.jpg')] bg-cover bg-center opacity-20" />
 
       {/* Header */}
-      <div className="relative z-10 text-left md:text-center mb-10 px-6">
+      <div className="relative z-10 text-left md:text-left mb-10 px-6">
         <h2 className="text-2xl md:text-3xl font-light tracking-[-0.015em]">
           My <span className="text-white font-semibold">Services</span>
         </h2>
