@@ -20,6 +20,10 @@ const services = [
     title: "Landing Page",
     image: "/service4.png",
   },
+  {
+    title: "Landing Page",
+    image: "/service4.png",
+  },
 ];
 
 export default function ServicesSection() {
