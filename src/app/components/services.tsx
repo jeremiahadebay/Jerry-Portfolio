@@ -23,8 +23,8 @@ export default function ServicesSection() {
 
       {/* Header */}
       <div className="relative z-10 text-left md:text-center mb-10 px-6">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-[-0.015em]">
-          My <span className="text-[#C6A3FF]">Services</span>
+        <h2 className="text-2xl md:text-3xl font-light tracking-[-0.015em]">
+          My <span className="text-white font-semibold">Services</span>
         </h2>
       </div>
 
