@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import Image from "next/image";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -70,7 +71,13 @@ export default function Navbar() {
           BM
         </div>
         <span className="text-white font-extrabold text-lg leading-tight text-center">
-          Por<br />folio
+          <Image
+            src="/portfoliologo.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="object-contain brightness-10 invert"
+          />
         </span>
       </div>
 
