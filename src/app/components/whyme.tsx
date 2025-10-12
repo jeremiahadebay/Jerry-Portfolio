@@ -30,7 +30,7 @@ export default function WhyChooseMe() {
   }, [inView, controls]);
 
   return (
-    <section className="flex justify-center rounded-[50px] py-20 bg-[#F4F5F7] rounded-[20px] shadow-md">
+    <section className="flex justify-center py-20 bg-[#F4F5F7] rounded-[20px] shadow-md">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 40 }}
@@ -66,7 +66,7 @@ export default function WhyChooseMe() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-[#1A004A] text-lg font-200 mb-3"
+            className="text-[#1A004A] font-100 text-lg font-200 mb-3"
           >
             Why Choose Me?
           </motion.h3>
@@ -75,7 +75,7 @@ export default function WhyChooseMe() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-gray-600 font-200 mb-8 max-w-md leading-relaxed"
+            className="text-gray-600 font-100 mb-8 max-w-md leading-relaxed"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus
             nunc, posuere in justo vulputate, bibendum sodales.
