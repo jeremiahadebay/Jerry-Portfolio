@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="flex flex-col items-center justify-center px-6 md:px-20 py-24 bg-white text-[#1A004A] relative overflow-hidden">
+    <section className="flex flex-col items-center justify-center px-6 md:px-20 pb-0 pt-24 bg-white text-[#1A004A] relative overflow-hidden">
       {/* === TOP HEADING SECTION === */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -13,7 +13,7 @@ export default function HeroSection() {
         transition={{ duration: 0.8 }}
         className="text-center mb-20 z-10"
       >
-        <p className="inline-block text-center text-[20px] font-medium border-2 border-[#1A004A] bg-[#fffff] text-[#1A004A] px-5 py-1 rounded-full text-sm font-medium mt-10 mb-2">
+        <p className="inline-block text-center text-[20px] font-medium border-2 border-[#1A004A] bg-[#fffff] text-[#1A004A] px-5 py-1 rounded-full text-sm mt-10 mb-2">
           Hello!
         </p>
 
@@ -31,7 +31,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center md:items-start text-center md:text-left px-4 md:px-0 space-y-6"
         >
-          <p className="text-gray-700 text-[#344054] font-400 text-base md:text-lg max-w-md relative leading-relaxed">
+          <p className="text-[#344054] font-400 text-base md:text-lg max-w-md relative leading-relaxed">
             <span className="text-6xl text-[#344054] font-serif absolute -left-6 top-0">“</span> <br />
             Jeremiah is a highly accomplished designer with more than{" "}
             <span className="font-semibold">7 years of experience</span> in this
@@ -56,8 +56,8 @@ export default function HeroSection() {
             <Image
               src="/jerryherosection.png"
               alt="Jeremiah portrait"
-              width={700}
-              height={700}
+              width={800}
+              height={800}
               className="object-cover rounded-full"
             />
           </div>

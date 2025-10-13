@@ -23,9 +23,10 @@ export default function ServicesSection() {
 
       {/* Header */}
       <div className="relative z-10 text-left md:text-left mb-10 px-7">
-        <h2 className="text-2xl md:text-3xl font-light tracking-[-0.015em]">
-          My <span className="text-white font-semibold">Services</span>
-        </h2>
+        <h1 className="text-center text-[28px] md:text-[48px] font-bold leading-tight tracking-[-0.02em]">
+            Testimonials That <br />
+        Speak to <span className="text-[#FD853A]"> My Results </span> 
+        </h1>
       </div>
 
       {/* Swiper */}
