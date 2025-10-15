@@ -9,7 +9,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [activeSection, setActiveSection] = useState('home'); // ✅ Default active section
+  const [activeSection, setActiveSection] = useState('home');
 
   const leftLinks = [
     { name: 'Home', href: 'home' },
