@@ -82,12 +82,18 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <hr className="border-gray-700 mt-10 mb-6" />
-        <div className="flex flex-col md:flex-row justify-between text-gray-500 text-sm">
-          <p>Copyright© 2023 Jayesh. All Rights Reserved.</p>
-          <p>
-            User Terms & Conditions | <span className="underline">Privacy Policy</span>
-          </p>
-        </div>
+       <div className="flex flex-col md:flex-row justify-between text-gray-500 text-sm">
+  <p>
+    Copyright © {new Date().getFullYear()} Jerry. All Rights Reserved.
+  </p>
+  <p>
+    User Terms & Conditions |{" "}
+    <span className="underline cursor-pointer hover:text-white transition">
+      Privacy Policy
+    </span>
+  </p>
+</div>
+
       </div>
     </footer>
   );
