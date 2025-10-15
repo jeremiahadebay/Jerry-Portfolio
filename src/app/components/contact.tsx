@@ -4,7 +4,7 @@ import { FaEnvelope, FaStar, FaAward, FaUserCheck } from "react-icons/fa";
 
 export default function ContactSection() {
   return (
-    <section className="py-20 text-center">
+    <section id="contact" className="py-20 text-center">
       {/* Heading */}
       <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-6">
         Have an <span className="text-orange-500">Awesome Project</span> <br /> Idea?{" "}

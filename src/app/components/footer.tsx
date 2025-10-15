@@ -1,4 +1,5 @@
 import { Mail, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -21,10 +22,18 @@ export default function Footer() {
           {/* Logo & Description */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="bg-orange-500 rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg">
-                J
-              </div>
-              <span className="font-bold text-xl">CREA</span>
+             <div className="flex items-center space-x-2">
+                     <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#1A004A] font-bold text-sm">
+                       BM
+                     </div>
+                     <Image
+                       src="/portfoliologo.png"
+                       alt="Logo"
+                       width={100}
+                       height={100}
+                       className="object-contain brightness-10 invert"
+                     />
+                   </div>
             </div>
             <p className="text-gray-400 text-sm">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue
