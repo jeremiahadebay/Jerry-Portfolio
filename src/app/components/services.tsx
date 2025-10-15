@@ -60,7 +60,7 @@ export default function ServicesSection() {
                 className="bg-white/10 border border-white/20 rounded-[20px] p-5 flex flex-col justify-between shadow-lg backdrop-blur-md"
               >
                 {/* Card top image */}
-                <div className="overflow-hidden rounded-[15px] mb-5 bg-white/5">
+                <div id="services" className="overflow-hidden rounded-[15px] mb-5 bg-white/5">
                   <Image
                     src={s.image}
                     alt={s.title}

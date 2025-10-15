@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="flex flex-col items-center justify-center px-6 md:px-20 pb-0 pt-24 bg-white text-[#1A004A] relative overflow-hidden">
+    <section id="home" className="flex flex-col items-center justify-center px-6 md:px-20 pb-0 pt-24 bg-white text-[#1A004A] relative overflow-hidden">
       {/* === TOP HEADING SECTION === */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}

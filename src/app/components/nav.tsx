@@ -1,43 +1,35 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import Image from "next/image";
+import Image from 'next/image';
+import { Link as ScrollLink } from 'react-scroll';
 
 export default function Navbar() {
-  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [activeSection, setActiveSection] = useState('home'); // ✅ Default active section
 
   const leftLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Service', href: '/service' },
+    { name: 'Home', href: 'home' },
+    { name: 'About', href: 'about' },
+    { name: 'Service', href: 'services' },
   ];
 
   const rightLinks = [
-    { name: 'Resume', href: '/resume' },
-    { name: 'Project', href: '/project' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Resume', href: 'resume' },
+    { name: 'Project', href: 'project' },
+    { name: 'Contact', href: 'contact' },
   ];
 
-  // === Hide navbar on scroll down, show on scroll up ===
+  // Hide navbar on scroll down
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // scrolling down
-        setVisible(false);
-      } else {
-        // scrolling up
-        setVisible(true);
-      }
+      setVisible(!(currentScrollY > lastScrollY && currentScrollY > 100));
       setLastScrollY(currentScrollY);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
@@ -51,17 +43,22 @@ export default function Navbar() {
       {/* === LEFT LINKS === */}
       <div className="hidden md:flex items-center space-x-8">
         {leftLinks.map((link) => (
-          <Link
+          <ScrollLink
             key={link.name}
-            href={link.href}
-            className={`text-base font-medium px-5 py-2 rounded-full transition-all duration-300 ${
-              pathname === link.href
-                ? 'bg-white text-[#1A004A] font-semibold'
+            to={link.href}
+            smooth={true}
+            duration={600}
+            offset={-80}
+            spy={true}
+            onSetActive={() => setActiveSection(link.href)}
+            className={`cursor-pointer text-base font-medium px-5 py-2 rounded-full transition-all duration-300 ${
+              activeSection === link.href
+                ? 'bg-white text-[#1A004A] font-semibold shadow-lg'
                 : 'text-white hover:bg-white/20'
             }`}
           >
             {link.name}
-          </Link>
+          </ScrollLink>
         ))}
       </div>
 
@@ -70,31 +67,34 @@ export default function Navbar() {
         <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#1A004A] font-bold text-sm">
           BM
         </div>
-        <span className="text-white font-extrabold text-lg leading-tight text-center">
-          <Image
-            src="/portfoliologo.png"
-            alt="Logo"
-            width={100}
-            height={100}
-            className="object-contain brightness-10 invert"
-          />
-        </span>
+        <Image
+          src="/portfoliologo.png"
+          alt="Logo"
+          width={100}
+          height={100}
+          className="object-contain brightness-10 invert"
+        />
       </div>
 
       {/* === RIGHT LINKS === */}
       <div className="hidden md:flex items-center space-x-8">
         {rightLinks.map((link) => (
-          <Link
+          <ScrollLink
             key={link.name}
-            href={link.href}
-            className={`text-base font-medium px-5 py-2 rounded-full transition-all duration-300 ${
-              pathname === link.href
-                ? 'underline underline-offset-4 text-white'
-                : 'text-white hover:opacity-80'
+            to={link.href}
+            smooth={true}
+            duration={600}
+            offset={-80}
+            spy={true}
+            onSetActive={() => setActiveSection(link.href)}
+            className={`cursor-pointer text-base font-medium px-5 py-2 rounded-full transition-all duration-300 ${
+              activeSection === link.href
+                ? 'bg-white text-[#1A004A] font-semibold shadow-lg'
+                : 'text-white hover:bg-white/20'
             }`}
           >
             {link.name}
-          </Link>
+          </ScrollLink>
         ))}
       </div>
 
@@ -105,26 +105,6 @@ export default function Navbar() {
       >
         {open ? <X size={24} /> : <Menu size={24} />}
       </button>
-
-      {/* === MOBILE MENU === */}
-      {open && (
-        <div className="absolute top-[86px] left-0 w-full bg-[#1A004A] border-t border-white/10 flex flex-col items-center py-5 space-y-4 rounded-b-[40px] md:hidden">
-          {[...leftLinks, ...rightLinks].map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`px-5 py-2 text-lg rounded-full font-medium transition-all duration-300 ${
-                pathname === link.href
-                  ? 'bg-white text-[#1A004A]'
-                  : 'text-white hover:bg-white/20'
-              }`}
-              onClick={() => setOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-      )}
     </nav>
   );
 }

@@ -30,7 +30,7 @@ export default function WhyChooseMe() {
   }, [inView, controls]);
 
   return (
-    <section className="flex justify-center py-20 bg-[#F4F5F7] rounded-[20px] shadow-md">
+    <section id="about" className="flex justify-center py-20 bg-[#F4F5F7] rounded-[20px] shadow-md">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 40 }}

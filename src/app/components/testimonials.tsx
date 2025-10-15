@@ -23,7 +23,7 @@ export default function ServicesSection() {
 
       {/* Header */}
       <div className="relative z-10 text-left md:text-left mb-10 px-7">
-        <h1 className="text-center text-[28px] md:text-[48px] font-bold leading-tight tracking-[-0.02em]">
+        <h1 className="text-center text-[28px] md:text-[48px] font-bold leading-tight mx-5 tracking-[-0.02em]">
             Testimonials That <br />
         Speak to <span className="text-[#FD853A]"> My Results </span> 
         </h1>
