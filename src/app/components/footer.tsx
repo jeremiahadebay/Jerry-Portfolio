@@ -58,9 +58,9 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-3">Contact</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li>+91 7784346396</li>
-              <li>Jaycrea36@gmail.com</li>
-              <li>Portfolio-jcrea.com</li>
+              <li>+234 703 016 8568</li>
+              <li>bamsonj@gmail.com</li>
+              <li>jerry-portfolio-kappa.vercel.app/</li>
             </ul>
           </div>
 
